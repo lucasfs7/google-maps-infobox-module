@@ -190,7 +190,6 @@ InfoBox.prototype.createInfoBoxDiv_ = function () {
       if (this.maxWidth_ !== 0 && this.div_.offsetWidth > this.maxWidth_) {
 
         this.div_.style.width = this.maxWidth_;
-        this.div_.style.overflow = "auto";
         this.fixedWidthSet_ = true;
 
       } else { // The following code is needed to overcome problems with MSIE
@@ -419,6 +418,9 @@ InfoBox.prototype.setBoxStyle_ = function () {
     if (this.zIndex_ !== null) {
 
       this.div_.style.zIndex = this.zIndex_;
+    }
+    if (!this.div_.style.overflow) {
+      this.div_.style.overflow = "auto";
     }
   }
 };
