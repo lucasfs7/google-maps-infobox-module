@@ -1,7 +1,7 @@
 {
   "name": "google-maps-infobox",
   "description": "A browserify optimized module of google maps infobox",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "repository": {
     "type": "git",
     "url": "git://github.com/lucasfs7/google-maps-infobox-module.git"
