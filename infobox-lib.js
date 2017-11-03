@@ -218,7 +218,7 @@ InfoBox.prototype.createInfoBoxDiv_ = function () {
 
         this.eventListeners_.push(google.maps.event.addDomListener(this.div_, events[i], cancelHandler));
       }
-      
+
       // Workaround for Google bug that causes the cursor to change to a pointer
       // when the mouse moves over a marker underneath InfoBox.
       this.eventListeners_.push(google.maps.event.addDomListener(this.div_, "mouseover", function (e) {
@@ -487,7 +487,7 @@ InfoBox.prototype.draw = function () {
   var pixPosition = this.getProjection().fromLatLngToDivPixel(this.position_);
 
   this.div_.style.left = (pixPosition.x + this.pixelOffset_.width) + "px";
-  
+
   if (this.alignBottom_) {
     this.div_.style.bottom = -(pixPosition.y + this.pixelOffset_.height) + "px";
   } else {
@@ -691,7 +691,7 @@ InfoBox.prototype.setVisible = function (isVisible) {
 
 /**
  * Returns the content of the InfoBox.
- * @returns {string}
+ * @returns {string | Node}
  */
 InfoBox.prototype.getContent = function () {
 
@@ -775,7 +775,7 @@ InfoBox.prototype.open = function (map, anchor) {
 
     this.mapListener_ = google.maps.event.addListener(anchor, "map_changed", function() {
       me.setMap(this.map);
-    });    
+    });
   }
 
   this.setMap(map);
@@ -800,7 +800,7 @@ InfoBox.prototype.close = function () {
   }
 
   if (this.eventListeners_) {
-    
+
     for (i = 0; i < this.eventListeners_.length; i++) {
 
       google.maps.event.removeListener(this.eventListeners_[i]);
@@ -815,11 +815,11 @@ InfoBox.prototype.close = function () {
   }
 
   if (this.mapListener_) {
-    
+
     google.maps.event.removeListener(this.mapListener_);
-    this.mapListener_ = null;    
+    this.mapListener_ = null;
   }
- 
+
   if (this.contextListener_) {
 
     google.maps.event.removeListener(this.contextListener_);
