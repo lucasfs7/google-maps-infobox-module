@@ -6,7 +6,11 @@
     "type": "git",
     "url": "git://github.com/lucasfs7/google-maps-infobox-module.git"
   },
-  "files": ["infobox-lib.js", "infobox-module.js", "types/index.d.ts"],
+  "files": [
+    "infobox-lib.js",
+    "infobox-module.js",
+    "types/index.d.ts"
+  ],
   "types": "types",
   "keywords": [
     "browser",
