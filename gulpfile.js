@@ -4,7 +4,7 @@ var chmod = require('gulp-chmod');
 
 gulp.task('modularize', function() {
   gulp.src('./infobox-lib.js')
-    .pipe(concat.footer('\n\nmodule.exports = { default: InfoBox, InfoBox: InfoBox }; '))
+    .pipe(concat.footer('\n\nexports.default = InfoBox;\nexports.InfoBox = InfoBox;'))
     .pipe(concat("infobox-module.js"))
     .pipe(chmod(766))
     .pipe(gulp.dest('./'))
