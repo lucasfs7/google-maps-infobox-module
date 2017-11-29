@@ -830,4 +830,5 @@ InfoBox.prototype.close = function () {
 };
 
 
-module.exports = { default: InfoBox, InfoBox: InfoBox }; 
+exports.default = InfoBox;
+exports.InfoBox = InfoBox;
