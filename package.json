@@ -30,7 +30,7 @@
   "devDependencies": {
     "@types/googlemaps": "^3.29.2",
     "dtslint": "github:Microsoft/dtslint#production",
-    "gulp": "^3.8.10",
+    "gulp": "^4.0.2",
     "gulp-chmod": "^1.2.0",
     "gulp-concat-util": "^0.5.1"
   }
