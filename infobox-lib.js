@@ -1,6 +1,5 @@
 /**
  * @name InfoBox
- * @version 1.1.13 [March 19, 2014]
  * @author Gary Little (inspired by proof-of-concept code from Pamela Fox of Google)
  * @copyright Copyright 2010 Gary Little [gary at luxcentral.com]
  * @fileoverview InfoBox extends the Google Maps JavaScript API V3 <tt>OverlayView</tt> class.
@@ -216,17 +215,17 @@ InfoBox.prototype.createInfoBoxDiv_ = function () {
 
       for (i = 0; i < events.length; i++) {
 
-        this.eventListeners_.push(google.maps.event.addDomListener(this.div_, events[i], cancelHandler));
+        this.eventListeners_.push(google.maps.event.addListener(this.div_, events[i], cancelHandler));
       }
 
       // Workaround for Google bug that causes the cursor to change to a pointer
       // when the mouse moves over a marker underneath InfoBox.
-      this.eventListeners_.push(google.maps.event.addDomListener(this.div_, "mouseover", function (e) {
+      this.eventListeners_.push(google.maps.event.addListener(this.div_, "mouseover", function (e) {
         this.style.cursor = "default";
       }));
     }
 
-    this.contextListener_ = google.maps.event.addDomListener(this.div_, "contextmenu", ignoreHandler);
+    this.contextListener_ = google.maps.event.addListener(this.div_, "contextmenu", ignoreHandler);
 
     /**
      * This event is fired when the DIV containing the InfoBox's content is attached to the DOM.
@@ -271,7 +270,7 @@ InfoBox.prototype.addClickHandler_ = function () {
   if (this.closeBoxURL_ !== "") {
 
     closeBox = this.div_.firstChild;
-    this.closeListener_ = google.maps.event.addDomListener(closeBox, "click", this.getCloseClickHandler_());
+    this.closeListener_ = google.maps.event.addListener(closeBox, "click", this.getCloseClickHandler_());
 
   } else {
 
